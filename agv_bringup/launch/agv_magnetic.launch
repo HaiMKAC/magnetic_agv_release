@@ -1,0 +1,20 @@
+<launch>
+	<arg name="port" default="/dev/ttyACM0"/>
+	<arg name="baud" default="115200"/>
+
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+	<node pkg="rosserial_python" type="serial_node.py" name="serial_node" output="screen">
+		<param name="port" value="$(arg port)"/>
+		<param name="baud" value="$(arg baud)"/>
+	</node>
+
+	<node name="clear_log" pkg="agv_bringup" type="clear_log.py" output="screen"/>
+	<node name="followline" pkg="agv_bringup" type="followline.py" output="screen"/>
+	<node name="controlsystem" pkg="agv_bringup" type="controlsystem.py" output="screen"/>
+	<node name="sound_control" pkg="agv_bringup" type="sound_control.py"/>
+	<node name="odometry" pkg="agv_bringup" type="odometry.py"/>
+	<node name="node_manager" pkg="agv_bringup" type="node_manager.py"/>
+	<node name="followline_sensor" pkg="agv_bringup" type="followline_sensor.py"/>
+
+	<include file="$(find agv_bringup)/launch/load_reconfigure.launch"/>
+</launch>
