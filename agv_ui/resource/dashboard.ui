@@ -37,7 +37,7 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="tab">
+     <widget class="QWidget" name="tabOverview">
       <attribute name="title">
        <string>Overview</string>
       </attribute>
@@ -7043,6 +7043,16 @@ p, li { white-space: pre-wrap; }
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QHBoxLayout" name="settingLayout"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabUpdate">
+      <attribute name="title">
+       <string>Update</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <layout class="QVBoxLayout" name="updateLayout"/>
        </item>
       </layout>
      </widget>

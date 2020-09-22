@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-from clear_log import main
+from update_agv import main
 main()
