@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=AGV
 Comment=ROS - AGV
-Exec=bash -c "source /opt/ros/melodic/setup.bash;source ~/catkin_ws/devel/setup.bash && rosrun agv_ui update_agv.py"
+Exec=bash -ic "source /opt/ros/melodic/setup.bash;source ~/catkin_ws/devel/setup.bash && rosrun agv_ui update_agv.py"
 Icon=/usr/local/share/icons/agv.png
 Type=Application
 Categories=ROS;
