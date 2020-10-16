@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=AGV
+Comment=ROS - AGV
+Exec=bash -ic "source /opt/ros/melodic/setup.bash;source ~/catkin_devel_ws/devel/setup.bash && rosrun agv_ui dashboard.py"
+Icon=/usr/local/share/icons/agv.png
+Type=Application
+Categories=ROS;
+StartupNotify=true
+Name[en_GB]=AGV_DEV
+Terminal=true

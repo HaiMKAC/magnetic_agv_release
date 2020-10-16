@@ -1072,7 +1072,7 @@ p, li { white-space: pre-wrap; }
                <enum>QLayout::SetDefaultConstraint</enum>
               </property>
               <item>
-               <widget class="QLabel" name="label_22">
+               <widget class="QLabel" name="labelLocalIP">
                 <property name="text">
                  <string>IP address: </string>
                 </property>
@@ -1082,6 +1082,27 @@ p, li { white-space: pre-wrap; }
                <widget class="QLabel" name="labelIP">
                 <property name="text">
                  <string>000.000.000.000</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="labelRemoteIP">
+                <property name="text">
+                 <string>Remote IP: </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="txtIP"/>
+              </item>
+              <item>
+               <widget class="QToolButton" name="btnConnectAGV">
+                <property name="text">
+                 <string>...</string>
                 </property>
                </widget>
               </item>
@@ -1104,7 +1125,7 @@ p, li { white-space: pre-wrap; }
              <layout class="QFormLayout" name="formLayout_3">
               <item row="0" column="0">
                <layout class="QFormLayout" name="formLayout">
-                <item row="1" column="0">
+                <item row="0" column="0">
                  <widget class="QLabel" name="label_6">
                   <property name="maximumSize">
                    <size>
@@ -1117,7 +1138,7 @@ p, li { white-space: pre-wrap; }
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="1">
+                <item row="0" column="1">
                  <widget class="QLabel" name="labelCurrentVel">
                   <property name="maximumSize">
                    <size>
@@ -1125,20 +1146,6 @@ p, li { white-space: pre-wrap; }
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text">
-                   <string>+0.00</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_11">
-                  <property name="text">
-                   <string>Command vel: </string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QLabel" name="labelCmdVel">
                   <property name="text">
                    <string>+0.00</string>
                   </property>
@@ -1196,6 +1203,19 @@ p, li { white-space: pre-wrap; }
              </layout>
             </item>
             <item>
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <layout class="QHBoxLayout" name="horizontalLayout_8">
               <item>
                <widget class="QLabel" name="label">
@@ -1229,19 +1249,6 @@ p, li { white-space: pre-wrap; }
                </widget>
               </item>
              </layout>
-            </item>
-            <item>
-             <spacer name="verticalSpacer_6">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
             </item>
             <item>
              <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,10,8">
@@ -1563,46 +1570,6 @@ p, li { white-space: pre-wrap; }
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_14">
-                <item>
-                 <spacer name="horizontalSpacer_3">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="btnMute">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>volume.png</normaloff>volume.png</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>64</width>
-                    <height>64</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
                <layout class="QHBoxLayout" name="horizontalLayout_15">
                 <item>
                  <widget class="QLabel" name="labelBatteryIcon">
@@ -1665,6 +1632,78 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <property name="text">
                    <string>100%</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QPushButton" name="btnToggleSafety">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>barrier.png</normaloff>barrier.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>64</width>
+                    <height>64</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="btnMute">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>volume.png</normaloff>volume.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>64</width>
+                    <height>64</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -7123,7 +7162,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QCheckBox" name="checkBoxFollowLineFake">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="maximumSize">
             <size>
@@ -7133,6 +7172,9 @@ p, li { white-space: pre-wrap; }
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
            </property>
            <property name="checked">
             <bool>false</bool>
