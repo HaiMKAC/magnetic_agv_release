@@ -1,4 +1,5 @@
 <launch>
+	<arg name="subfix" default=""/>
 	<arg name="port" default="/dev/ttyACM0"/>
 	<arg name="baud" default="115200"/>
 
@@ -8,13 +9,13 @@
 		<param name="baud" value="$(arg baud)"/>
 	</node>
 
-	<node name="clear_log" pkg="agv_bringup" type="clear_log.py" output="screen"/>
-	<node name="followline" pkg="agv_bringup" type="followline.py" output="screen"/>
-	<node name="controlsystem" pkg="agv_bringup" type="controlsystem.py" output="screen"/>
-	<node name="sound_control" pkg="agv_bringup" type="sound_control.py"/>
-	<node name="odometry" pkg="agv_bringup" type="odometry.py"/>
-	<node name="node_manager" pkg="agv_bringup" type="node_manager.py"/>
-	<node name="followline_sensor" pkg="agv_bringup" type="followline_sensor.py"/>
+	<node name="clear_log" pkg="agv_bringup" type="clear_log$(arg subfix)" output="screen"/>
+	<node name="followline" pkg="agv_bringup" type="followline$(arg subfix)" output="screen"/>
+	<node name="controlsystem" pkg="agv_bringup" type="controlsystem$(arg subfix)" output="screen"/>
+	<node name="sound_control" pkg="agv_bringup" type="sound_control$(arg subfix)"/>
+	<node name="odometry" pkg="agv_bringup" type="odometry$(arg subfix)"/>
+	<node name="node_manager" pkg="agv_bringup" type="node_manager$(arg subfix)"/>
+	<node name="followline_sensor" pkg="agv_bringup" type="followline_sensor$(arg subfix)"/>
 
 	<include file="$(find agv_bringup)/launch/load_reconfigure.launch"/>
 </launch>

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(agv_msg)
+project(agv_msgs)
 
 find_package(catkin REQUIRED COMPONENTS
     roscpp
@@ -25,6 +25,8 @@ add_message_files(
     CardID.msg
     SafetyStt.msg
     SafetyControl.msg
+    ArduinoSensor.msg
+    ArduinoSensorList.msg
 )
 generate_messages(
     DEPENDENCIES
