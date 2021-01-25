@@ -1,0 +1,33 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      kd: 0.5
+      ki: 0.0
+      kp: 0.8
+      left_wheel_factor_backward: 0.9
+      left_wheel_factor_forward: 0.98
+      name: Default
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      right_wheel_factor_backward: 1.0
+      right_wheel_factor_forward: 1.0
+      state: true
+      table_error: 0, 1, 2, 3, 4.5, 6.2, 8.5, 11, 14.1, 18, 22, 27, 32.1, 37.8, 43.5,
+        50
+      type: ''
+    state: []
+  kd: 0.5
+  ki: 0.0
+  kp: 0.8
+  left_wheel_factor_backward: 0.9
+  left_wheel_factor_forward: 0.98
+  right_wheel_factor_backward: 1.0
+  right_wheel_factor_forward: 1.0
+  table_error: 0, 1, 2, 3, 4.5, 6.2, 8.5, 11, 14.1, 18, 22, 27, 32.1, 37.8, 43.5,
+    50
+state: []
