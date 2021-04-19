@@ -1,8 +1,3 @@
 card.db
-<<<<<<< HEAD
 local_setting.db
 agv_bringup/cfg/followline.yaml
-=======
-# local_setting.db
-# agv_bringup/cfg/followline.yaml
->>>>>>> d069506
