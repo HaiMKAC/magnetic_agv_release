@@ -13,7 +13,7 @@ add_service_files(
     DataCheck.srv
 )
 add_message_files(
-    FILES  
+    FILES
     FollowLineSensor.msg
     FollowLineControl.msg
     DiffDriverMotorSpeed.msg
@@ -25,8 +25,8 @@ add_message_files(
     CardID.msg
     SafetyStt.msg
     SafetyControl.msg
-    ArduinoSensor.msg
-    ArduinoSensorList.msg
+    EncoderDifferential.msg
+    LedControl.msg
 )
 generate_messages(
     DEPENDENCIES
