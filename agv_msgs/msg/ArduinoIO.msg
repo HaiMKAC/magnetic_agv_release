@@ -3,6 +3,8 @@ bool EMG_1
 bool EMG_2
 bool Start_1
 bool Start_2
+bool Remote_A
+bool Remote_B
 bool Motor1_En
 bool Motor1_Break
 bool Motor1_Dir

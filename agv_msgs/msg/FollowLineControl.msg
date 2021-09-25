@@ -4,3 +4,4 @@ int8 TurnType
 int8 RotateType
 int16 Speed
 int8 Direction
+int8 SmootherStopSpeed
