@@ -1,3 +1,4 @@
 <launch>
-	<node name="dynamic_reconfigure_1" pkg="dynamic_reconfigure" type="dynparam" output="screen" args="dump /followline $(find agv_bringup)/cfg/followline.yaml"/>
+	<node name="dynamic_reconfigure_1" pkg="dynamic_reconfigure" type="dynparam" output="screen"
+			args="dump /followline $(find agv_tape_config)/reconfigure/followline.yaml"/>
 </launch>
