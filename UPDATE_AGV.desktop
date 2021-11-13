@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=AGV
+Comment=ROS - AGV
+Exec=bash -ic "source /opt/ros/melodic/setup.bash;source ~/catkin_release_ws/devel/setup.bash && rosrun agv_ui update_agv"
+# Icon=/usr/share/pixmaps/amr.png
+Type=Application
+Categories=ROS;
+StartupNotify=true
+Name=AGV_UPDATE
+Terminal=true
